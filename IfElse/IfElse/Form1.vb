@@ -11,8 +11,21 @@ Public Class Form1
         Dim st1 As String = txtFirstNum.Text
         Dim st2 As String = txtSecondNum.Text
 
+        'Checkpoint
+        If Not (IsNumeric(st1) And IsNumeric(st2)) Then
+            MessageBox.Show("Please type numbers only")
+            Return
+        End If
+
+        'Clean area
         num1 = CDbl(st1)
         num2 = CDbl(st2)
+
+        'Checkpoint 2
+        If Not (num1 >= 0 And num2 >= 0) Then
+            MessageBox.Show("Please type only non-negative numbers")
+            Return
+        End If
 
         Dim result As String
 
@@ -25,6 +38,8 @@ Public Class Form1
         End If
 
         txtResult.Text = result
+
+
     End Sub
 
 End Class
